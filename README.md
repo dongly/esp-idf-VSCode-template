@@ -1,5 +1,6 @@
 ESP-IDF template app for Visual Studio Code
 ====================
+
 This is a template application to be used with `Espressif IoT Development Framework`_ (ESP-IDF) in conjunction with VSCode on Windows & Linux.
 
 VSCode works best if ``C/C++`` extension is installed and esp-idf is located inside the workspace folder otherwise specify its location in ``c_cpp_properties``.

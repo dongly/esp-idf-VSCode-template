@@ -4,7 +4,7 @@
 		"reveal": "always",
 		"panel": "dedicated",
 		"echo": true,
-		"focus": false
+		"focus": true
 	},
 	"options": {
 		"cwd": "${workspaceFolder}",
@@ -41,7 +41,7 @@
 		{
 			"label": "Flash",
 			"type": "shell",
-			"command": "make -j8 flash ",
+			"command": "make -j8 flash",
 			"problemMatcher": {
 				"owner": "cpp",
 				"fileLocation": [
@@ -61,7 +61,7 @@
 		{
 			"label": "Flash & Monitor",
 			"type": "shell",
-			"command": "make -j8 flash ",
+			"command": "make -j8 flash monitor",
 			"problemMatcher": {
 				"owner": "cpp",
 				"fileLocation": [
