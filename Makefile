@@ -3,9 +3,10 @@
 # project subdirectory.
 #
 ifndef APP_NAME
-APP_NAME := app-fireware
+APP_NAME := app-firmware
 endif
 PROJECT_NAME= $(APP_NAME)
 
 include $(IDF_PATH)/make/project.mk
 
+ 
