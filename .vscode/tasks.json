@@ -9,62 +9,15 @@
 	"options": {
 		"cwd": "${workspaceFolder}",
 		"env": {
-			"projectname": "${workspaceFolderBasename}",
+			"APP_NAME": "${workspaceFolderBasename}",
 			"IDF_PATH": "${workspaceFolder}/esp-idf",
 		}
 	},
-	//	"version": "0.1.0",
-	//	"command": "bash",
-	//	"args": [
-	//		"-c"
-	//	],
-	//	"isShellCommand": true,
-	//	"showOutput": "always",
-	//	"echoCommand": true,
-	"linux": {
-		"options": {
-			"env": {
-				"openOCDPath": "/home/fhfs/ESP/openocd-esp32-sysprogs",
-				"XtensaPath": "/home/fhfs/ESP/xtensa-esp32-elf",
-				"XtensaEsp32ELFBinPath": "${XtensaPath}/bin"
-			}
-		}
-	},
-	"windows": {
-		"options": {
-			"cwd": "${workspaceFolder}",
-			"env": {
-				"XtensaEsp32ELFBinPath": "/c/IoT/xtensa-esp32-elf/bin",
-				"openOCDPath": "/c/IoT/openocdMerged"
-			}
-		}
-	},
-	//	"tasks": [
-	//		{
-	//			"taskName": "Build",
-	//			"suppressTaskName": true,
-	//			"args": [
-	//				"make -j8 V=1" //"make -j8 V=1 flash log"
-	//			],
-	//			"isBuildCommand": true,
-	//			"problemMatcher": {
-	//				"owner": "cpp",
-	//				"fileLocation": "absolute",
-	//				"pattern": {
-	//					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-	//					"file": 1,
-	//					"line": 2,
-	//					"column": 3,
-	//					"severity": 4,
-	//					"message": 5
-	//				}
-	//			}
-	//		},
 	"tasks": [
 		{
 			"label": "Build",
 			"type": "shell",
-			"command": "make -j8 V=1",
+			"command": "make all -j8 ",
 			"group": {
 				"kind": "build",
 				"isDefault": true
@@ -84,6 +37,58 @@
 					"message": 5
 				}
 			}
+		},
+		{
+			"label": "Flash",
+			"type": "shell",
+			"command": "make -j8 flash ",
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"label": "Flash & Monitor",
+			"type": "shell",
+			"command": "make -j8 flash ",
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"label": "Clean",
+			"type": "shell",
+			"command": "make clean ",
+			"problemMatcher": []
+		},
+		{
+			"label": "Monitor",
+			"type": "shell",
+			"command": "make -j8 monitor",
+			"problemMatcher": []
 		}
 	]
 	//		{
